@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.10.3.custom/css/ui-darkness/jquery-ui-1.10.3.custom.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-modal.js"></script>
+	<link href="google-code-prettify/prettify.css" rel="stylesheet">
+	<script src="google-code-prettify/prettify.js"></script>
+	<script type="text/javascript" src="complete.js"></script>
+	<script>
+            $(function () {
+                $('.tool').tooltip();
+            });
+        </script>
+	<style type="text/css">
+		A:link {text-decoration: none; color: black; font-weight: bold;}
+		A:visited {text-decoration: none}
+		A:active {text-decoration: none}
+		A:hover {text-decoration: none; color: white; text-shadow: 0.1em 0.1em 0.2em black}
+		body {
+			padding-top: 80px;
+			background-image:url('img/wall.jpg');
+		}
+	</style>
+	<script>
+	$(document).ready(function(){ 
+		prettyPrint();
+		window.onload = cerrar; 
+		function cerrar(){ 
+		$("#carga").animate({"opacity":"0"},1000,function(){$("#carga").css("display","none");}); 
+		} 
+		$("#carga").click(function(){cerrar();}); 
+	});
+	</script> 
+</head>
+<body >
+<div id="carga" 
+style="cursor:pointer;
+border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;
+box-shadow:inset black 0px 0px 14px;
+background-color:gray; color:#fff; text-align:center; padding:5px; position:absolute;bottom: 5px; right: 2%;z-index:6;">
+<img src="img/loading.gif"/> Cargando ZenCode</div> 
+	<div class="container">		
+		<div class="navbar navbar-fixed-top">
+		  <div class="navbar-inner">
+		    <div class="container">
+		    	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		        </a>
+		        <a class="brand" href="?page=home" style="float: right; font-weight: bold; color: #000;">
+				 	ZendCode
+				</a>
+		    	<div class="nav-collapse">
+		    		<ul class="nav">
+		    			<li class="active">
+		    				<a href="?page=home">Inicio</a>
+		    			</li>
+          				<li class="divider-vertical"></li>
+		    			<li class="dropdown" id="menu1">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+					      log in
+					      <b class="caret"></b>
+					    </a>
+					    <div class="dropdown-menu">
+					    	<center>
+					      <form class="well">
+						      	<input placeholder="User">
+							    <input placeholder="Password">
+							    <button class="btn btn-inverse">log in</button>
+					      </form>
+					      Use Facebook, Twitter or Googel+</center>
+					    </div>
+					  </li>
+		    		</ul>
+		    	</div>
+		    </div>
+		  </div>
+		</div>
+		<div class="container well">
+			{contenido}
+		<hr>
+			<center>
+				<h6>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES" target="blank">
+						<img alt="Licencia de Creative Commons" style="border-width:0" src="img/88x31.png" />
+					</a><br />
+					<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">ZenCode</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Tona - Jhonathan Borda Moreno</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es_ES" target="blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 3.0 Unported License</a>.
+				</h6>
+			</center>
+	</div>	
+</body>
+</html>

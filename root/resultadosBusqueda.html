@@ -1,0 +1,28 @@
+<div class="accordion" id="accordion">
+  <div class="accordion-group">
+    <div class="accordion-heading" style="position: relative;">
+      <a data-toggle="modal" href="#myModal{ID}" style="position: absolute; right: 2px; top: 2px;"><i class="icon-plus-sign"></i></a><a class="accordion-toggle tool" data-toggle="collapse" data-parent="#accordion" href="#collapse{ID}" rel="tooltip" data-original-title="{DESCRIP}">
+        {TITULO}
+      </a>
+    </div>
+    <div id="collapse{ID}" class="accordion-body collapse" style="height: 0px;">
+      <div class="accordion-inner">
+        <pre class="prettyprint linenums">{CODIGO}</pre>
+        {MORECODE}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal{ID}">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>{TITULO}</h3>
+  </div>
+  <div class="modal-body">
+    <pre class="prettyprint linenums">{CODIGO}</pre>
+    {MORECODE}
+  </div>
+  <div class="modal-footer">
+    <p>{DESCRIP}</p>
+  </div>
+</div>

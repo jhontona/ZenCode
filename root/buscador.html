@@ -1,0 +1,36 @@
+<script type="text/javascript">
+	function busqueda(dato){
+		var collection = dato;
+		document.getElementById("btnBuscar").innerHTML = '<i class="icon-search"></i> '+dato;
+		document.getElementById("btnBuscar").value = dato;
+	}
+</script>
+<div class="hero-unit">
+	<center>
+		<h1>ZenCode</h1>
+		<p>Biblioteca virtual zen developers</p>
+		<form class="form-search" method="POST">
+			<table>
+				<tr>
+					<td>
+						<input type="text" class="input-medium search-query span6" id="buscador" name="buscador">
+					</td>
+					<td>
+						<div class="btn-group">
+						<button type="submit" class="btn" id="btnBuscar" name="btnBuscar"><i class="icon-search"></i></button>
+					    <a class="btn dropdown-toggle" data-toggle="dropdown">
+					    	<span class="caret"></span>
+					    </a>
+					    <ul class="dropdown-menu">
+					    	{LISTA}
+					    </ul>
+					</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</div>
+<div style="position: relative;">
+	{BUSQUEDA}
+</div>

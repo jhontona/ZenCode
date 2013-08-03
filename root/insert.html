@@ -1,0 +1,116 @@
+<script type="text/javascript">
+	function addTag() { 
+		var div = document.getElementById("tags");
+		var tag = document.getElementById("tag").value;
+		if (tag != ""){
+			div.innerHTML = div.innerHTML + '<span class="label label-inverse">'+tag+'</span> ';
+		}
+		document.getElementById("tag").value = "";
+		document.getElementById("hTags").value =  div.innerHTML;
+	}
+	var contadorCodigos = 0;
+	function crearCampoCod(){
+		contadorCodigos++;
+		var i = 0;
+		var textareaCod = "";
+		while (i<contadorCodigos){
+			var contenidoTextarea = document.getElementById('codigo'+i).value;
+			textareaCod = textareaCod + '<textarea placeholder="Código'+ i +'" class="span12" rows="10" name="code'+ i +'" id="codigo'+ i +'" required>'+contenidoTextarea+'</textarea>';
+			i++;
+			if (i == contadorCodigos){
+				textareaCod = textareaCod + '<textarea placeholder="Código'+ i +'" class="span12" rows="10" name="code'+ i +'" id="codigo'+ i +'" required></textarea>';
+			}
+		}
+		var div = document.getElementById("codigos");
+		div.innerHTML = textareaCod;
+
+		$("textarea").keydown(function(e) {
+    		if(e.keyCode === 9) { 
+        		var start = this.selectionStart;
+        		var end = this.selectionEnd;
+				var $this = $(this);
+        		var value = $this.val();
+        		$this.val(value.substring(0, start)
+                    + "\t"
+                    + value.substring(end));
+        		this.selectionStart = this.selectionEnd = start + 1;
+        		e.preventDefault();
+    		}
+		});
+	}
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("textarea").keydown(function(e) {
+    		if(e.keyCode === 9) { 
+        		var start = this.selectionStart;
+        		var end = this.selectionEnd;
+				var $this = $(this);
+        		var value = $this.val();
+        		$this.val(value.substring(0, start)
+                    + "\t"
+                    + value.substring(end));
+        		this.selectionStart = this.selectionEnd = start + 1;
+        		e.preventDefault();
+    		}
+		});
+	});
+</script>
+<div class="well">
+	<center>
+		<h1>Nuevo Código</h1>
+	</center>
+</div>			
+<form method="POST">
+	<table>
+		<tr>
+			<td>
+				<input type="text" placeholder="Título" class="span12" name="titulo" required>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="codigos">
+					<textarea placeholder="Código" class="span12" rows="10" name="code0" id="codigo0" required></textarea>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<textarea placeholder="Comentarios" class="span12" rows="5" name="comment"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="span12 table-bordered" id="tags"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="span12">
+					<tr>
+						<td class="span8">
+							<input type="text" class="span5" id="tag">
+							<a class="btn btn-inverse btn-small" onClick="addTag()" href="#">
+								<i class="icon-tag icon-white"></i> Add tag
+							</a>
+							<a class="btn btn-inverse btn-small" onClick="crearCampoCod()" href="#">
+								<i class="icon-plus-sign icon-white"></i> Add Code
+							</a>
+						</td>
+						<td>
+							<select name="coleccion">
+								{LISTA}
+							</select>
+						</td>
+						<td>
+							<input type="hidden" name="hTags" id="hTags">
+							<button class="btn btn-inverse btn-large span2" type="submit"><i class="icon-ok icon-white"></i> Guardar</button>
+						</td>
+					</tr>
+				</table>					
+			</td>
+		</tr>
+	</table>
+</form>
+{RESPUESTA}
