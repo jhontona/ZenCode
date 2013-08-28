@@ -1,1 +1,0 @@
-xcopy php.ini php /y /r
